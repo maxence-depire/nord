@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nord/controllers/compass_controller.dart';
 import 'package:provider/provider.dart';
@@ -90,6 +93,21 @@ class HomePage extends StatelessWidget {
                 height: _screenHeight,
                 width: _screenWidth,
               ),
+
+              Column(
+                children: [
+                  SizedBox(
+                    width: 150.0,
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      onChanged: (text) {
+                        print("text ${text}");
+                      },
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ),
