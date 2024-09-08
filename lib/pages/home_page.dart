@@ -1,4 +1,3 @@
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nord/controllers/compass_controller.dart';
@@ -67,7 +66,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     const SizedBox(height: 12),
                     Text(
-                      '${_compassController.compassHeading?.round()}°',
+                      '${_compassController.compassHeading?.round() ?? 0}°',
                       style: GoogleFonts.redHatDisplay(
                         fontSize: 50,
                         fontWeight: FontWeight.w900,
@@ -75,7 +74,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      '${_compassController.compassDirection}',
+                      '${_compassController.compassDirection ?? 0}',
                       style: GoogleFonts.redHatDisplay(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
